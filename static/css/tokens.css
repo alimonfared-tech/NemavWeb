@@ -1,0 +1,12 @@
+:root{
+  --bg-deep:#080B10; --bg:#0D1117; --surface:#111318;
+  --primary:#3B82FF; --primary-light:#69A7FF;
+  --text:#F5F5F2; --muted:#8B93A3;
+  --border:rgba(105,167,255,.18);
+  --radius-md:12px; --radius-lg:16px;
+  --container:1280px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --dur-base:.3s;
+  --glow-sm:0 0 24px rgba(59,130,255,.15);
+  --z-nav:50;
+}
