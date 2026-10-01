@@ -1,0 +1,198 @@
+/* ===== سربرگ صفحه‌ها ===== */
+.page-head {
+    padding: 48px 0 8px;
+    text-align: center
+}
+
+.page-title {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 800
+}
+
+.page-sub{color:var(--muted);max-width:60ch;margin:8px auto 0;overflow-wrap:break-word;word-break:break-word}
+
+
+.contact-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;padding-block:32px 64px;align-items:start}
+.contact-grid > *{min-width:0;overflow:hidden}
+
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px;overflow:hidden}
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px
+}
+
+.field label {
+    font-size: 1rem;
+    font-weight: 700
+}
+
+.field input,
+.field select,
+.field textarea {
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    color: var(--text);
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px var(--primary-tint)
+}
+
+.field textarea {
+    height: 140px;
+    resize: none;
+    overflow-y: auto
+}
+
+.field textarea{height:140px;resize:none;overflow-y:auto;overflow-wrap:break-word;word-break:break-word;white-space:pre-wrap;max-width:100%}
+
+
+.field-error {
+    color: var(--error);
+    font-size: .85rem
+}
+
+/* ===== dropdown اختصاصی ===== */
+.custom-select{position:relative}
+.cs-trigger{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:12px 16px;color:var(--text);font-size:1rem;cursor:pointer;width:100%;
+  transition:border-color var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease);
+}
+.cs-trigger:focus,.cs-trigger.open{outline:none;border-color:var(--primary-light);box-shadow:0 0 0 3px var(--primary-tint)}
+.cs-arrow{width:8px;height:8px;flex-shrink:0;
+  border-inline-end:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:rotate(45deg);transition:transform var(--dur-base) var(--ease)}
+.cs-trigger.open .cs-arrow{transform:rotate(-135deg)}
+.cs-dropdown{
+  position:absolute;top:calc(100% + 6px);right:0;left:0;z-index:10;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  box-shadow:0 12px 32px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(-6px);pointer-events:none;
+  transition:opacity var(--dur-base) var(--ease),transform var(--dur-base) var(--ease);
+  max-height:240px;overflow-y:auto;
+}
+.cs-dropdown.open{opacity:1;transform:none;pointer-events:auto}
+.cs-option{
+  padding:11px 16px;color:var(--muted);font-size:1rem;cursor:pointer;
+  transition:background-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease);
+}
+.cs-option:hover,.cs-option.focused{background:var(--primary-tint);color:var(--text)}
+.cs-option.selected{color:var(--primary-light);font-weight:700}
+
+.honeypot {
+    position: absolute;
+    inset-inline-start: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap
+}
+
+.form-note{color:var(--muted);font-size:.85rem;overflow-wrap:break-word;word-break:break-word}
+
+
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 32px 8px
+}
+
+.form-success p{color:var(--muted);margin-bottom:16px;overflow-wrap:break-word;word-break:break-word;max-width:100%}
+
+
+.form-success.show {
+    display: block
+}
+
+.icon-ok {
+    width: 56px;
+    height: 56px;
+    color: var(--success);
+    margin: 0 auto 16px;
+    display: block
+}
+
+.form-success h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 8px
+}
+
+.form-success p {
+    color: var(--muted);
+    margin-bottom: 16px
+}
+
+.info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;overflow:hidden}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px
+}
+
+.steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 1rem
+}
+
+.steps li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start
+}
+
+.step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--primary-tint);
+    color: var(--primary-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    font-weight: 700
+}
+
+.info-lines{display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:1rem;overflow-wrap:break-word;word-break:break-word;max-width:100%}
+.info-lines span{overflow-wrap:break-word;word-break:break-word;white-space:normal;max-width:100%;display:block}
+
+
+@media (max-width:900px) {
+    .contact-grid {
+        grid-template-columns: 1fr
+    }
+}

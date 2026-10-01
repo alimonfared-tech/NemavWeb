@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}تماس با نِماو | درخواست قیمت پروژه{% endblock %}
+{% block content %}
+<section class="container page-head">
+    <h1 class="page-title">شروع کنیم؟</h1>
+    <p class="page-sub">ایده یا نیازت رو بنویس؛ راهکار و قیمتش با ما.</p>
+</section>
+
+<section class="container contact-grid">
+    <div class="form-card">
+        <form id="contact-form" novalidate>
+            {% csrf_token %}
+            <div class="field">
+                <label for="f-name">نام</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+                <span class="field-error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+                <label for="f-phone">شماره تماس</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="۰۹۲۱۲۳۴۵۶۷"
+                    required>
+                <span class="field-error" data-error-for="phone"></span>
+            </div>
+            <div class="field">
+                <label for="cs-type">نوع پروژه</label>
+                <div class="custom-select" id="cs-type">
+                    <button type="button" class="cs-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="cs-label">سایر</span>
+                        <span class="cs-arrow"></span>
+                    </button>
+                    <div class="cs-dropdown" role="listbox">
+                        <div class="cs-option" role="option" data-value="web">طراحی وب‌سایت</div>
+                        <div class="cs-option" role="option" data-value="shop">فروشگاه اینترنتی</div>
+                        <div class="cs-option" role="option" data-value="landing">لندینگ پیج</div>
+                        <div class="cs-option" role="option" data-value="dashboard">داشبورد/پنل</div>
+                        <div class="cs-option" role="option" data-value="admin">خدمات کامپیوتری و اداری</div>
+                        <div class="cs-option selected" role="option" data-value="other" aria-selected="true">سایر</div>
+                    </div>
+                    <input type="hidden" name="project_type" value="other">
+                </div>
+                <span class="field-error" data-error-for="project_type"></span>
+            </div>
+            <div class="field">
+                <label for="f-message">دربارهٔ پروژه‌ات بنویس</label>
+                <textarea id="f-message" name="message" maxlength="1000"></textarea>
+                <span class="field-error" data-error-for="message"></span>
+            </div>
+
+            <div class="honeypot" aria-hidden="true">
+                <label>وب‌سایت</label>
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-actions">
+                <button class="btn" type="submit" id="contact-submit">ارسال درخواست</button>
+                <span class="form-note">معمولاً زیر ۲۴ ساعت پاسخ می‌دیم</span>
+            </div>
+        </form>
+
+        <div class="form-success" id="form-success" role="status">
+            <svg class="icon-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m8 12.5 2.5 2.5L16 9.5" />
+            </svg>
+            <h3>درخواستت ثبت شد</h3>
+            <p>به‌زودی باهات تماس می‌گیریم.</p>
+            <button class="btn btn-sm" id="send-again" type="button">ارسال یک درخواست دیگر</button>
+        </div>
+    </div>
+
+    <aside class="info-col">
+        <div class="info-card">
+            <h3>بعد از ارسال چه می‌شه؟</h3>
+            <ol class="steps">
+                <li><span class="step-num">۱</span><span>درخواستت رو می‌خونیم.</span></li>
+                <li><span class="step-num">۲</span><span>تماس می‌گیریم و جزئیات رو هماهنگ می‌کنیم.</span></li>
+                <li><span class="step-num">۳</span><span>راهکار و قیمت رو برات می‌فرستیم.</span></li>
+            </ol>
+        </div>
+        <div class="info-card">
+            <h3>تماس مستقیم</h3>
+            <div class="info-lines">
+                <span class="isolate">۰۹۱۲ ۱۲۳ ۴۵۶۷</span>
+                <span class="isolate">info@nemav.ir</span>
+                <span>ایران، مشهد</span>
+            </div>
+        </div>
+    </aside>
+</section>
+{% endblock %}

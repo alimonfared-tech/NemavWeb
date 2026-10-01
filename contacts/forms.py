@@ -16,7 +16,7 @@ class ContactForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data["name"].strip()
         if len(name) < 3:
-            raise forms.ValidationError("نام باید حداقل ۲ حرف باشد.")
+            raise forms.ValidationError("نام باید حداقل ۳ حرف باشد.")
         return name
 
     def clean_phone(self):
