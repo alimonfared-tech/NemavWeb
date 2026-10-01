@@ -93,7 +93,37 @@ html[data-theme="light"] .theme-moon{display:none}
 .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;gap:16px}
 .hero h1{font-size:clamp(1.9rem,5vw,3.6rem);font-weight:800;line-height:1.6}
 .hero p{color:var(--muted);max-width:56ch}
-.site-footer{padding-block:32px;color:var(--muted);border-top:1px solid var(--border);margin-top:64px}
+    
+/* ===== فوتر ===== */
+.site-footer{margin-top:96px;background:var(--bg);border-top:1px solid var(--border);position:relative;overflow:hidden}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:40px;padding-block:56px 40px}
+.footer-desc{color:var(--muted);font-size:.95rem;max-width:36ch;margin-top:16px}
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.footer-col{display:flex;flex-direction:column;gap:10px}
+.footer-col h3{font-size:1rem;font-weight:700;margin-bottom:6px;position:relative;padding-bottom:10px}
+.footer-col h3::after{content:"";position:absolute;inset-inline-start:0;bottom:0;width:24px;height:2px;background-image:var(--grad-primary);border-radius:999px}
+.footer-col a{color:var(--muted);font-size:.95rem;transition:color var(--dur-base) var(--ease)}
+.footer-col a:hover{color:var(--primary-light)}
+
+/* کارت تماس */
+.contact-row{display:flex;align-items:center;gap:10px;padding:6px 0px;border-radius:var(--radius-md);color:var(--muted);font-size:.95rem;transition:background-color var(--dur-base) var(--ease),color var(--dur-base) var(--ease)}
+.contact-row svg{width:18px;height:18px;flex-shrink:0;color:var(--primary-light)}
+
+/* جداسازی جهت (بدون dir در HTML) */
+.isolate{direction:ltr;unicode-bidi:isolate}
+
+.footer-bottom{border-top:1px solid var(--border)}
+.footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:20px;color:var(--muted);font-size:.85rem}
+
+/* موبایل: برند سنتر + لینک‌ها دوستونه + تماس تمام‌عرض */
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1 / -1;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .footer-desc{max-width:44ch}
+  .footer-social{justify-content:center}
+  .footer-contact{grid-column:1 / -1}
+  .footer-bottom-inner{flex-direction:column;justify-content:center;text-align:center}
+}
 
 /* ===== موبایل ===== */
 @media (max-width:900px){

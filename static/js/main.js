@@ -24,3 +24,7 @@ if (themeBtn) {
     try { localStorage.setItem('nemav-theme', next); } catch (e) {}
   });
 }
+
+// سال شمسی خودکار در فوتر
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Intl.DateTimeFormat('fa-IR', { year: 'numeric' }).format(new Date());
