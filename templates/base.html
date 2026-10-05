@@ -1,14 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="{% block description %}نِماو — استودیو دیجیتال؛ طراحی وب‌سایت و فروشگاه اینترنتی، داشبورد و خدمات اداری، متناسب با نیاز و بودجهٔ شما.{% endblock %}">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0B0E14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="نِماو">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="{% block og_title %}نِماو | خدمات دیجیتال و طراحی وب{% endblock %}">
+  <meta property="og:description"
+    content="طراحی وب‌سایت و فروشگاه اینترنتی، داشبورد و خدمات اداری — متناسب با نیاز و بودجهٔ شما.">
+  <meta name="twitter:card" content="summary">
   <title>{% block title %}نِماو | خدمات دیجیتال و طراحی وب{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" href="{% static 'css/pages.css' %}">
 </head>
+
 <body>
   {% include "includes/navbar.html" %}
   <main>{% block content %}{% endblock %}</main>
@@ -16,4 +29,5 @@
 
   <script src="{% static 'js/main.js' %}" defer></script>
 </body>
+
 </html>

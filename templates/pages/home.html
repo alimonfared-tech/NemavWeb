@@ -1,8 +1,287 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}نِماو | خدمات دیجیتال و طراحی وب{% endblock %}
 {% block content %}
-<section class="container hero">
-  <h1>کار شما،<br>یک راه‌حل ساده‌تر<br>می‌خواهد.</h1>
-  <p>از انجام کارهای اداری و دیجیتال تا طراحی و اجرای وب‌سایت، راهکاری متناسب با نیاز و بودجه شما ارائه می‌دهیم.</p>
-  <div><a class="btn" href="#">دریافت قیمت پروژه</a></div>
+
+<!-- ===== 01. Hero ===== -->
+<section class="home-hero">
+  <div class="home-hero-bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="container home-hero-inner">
+    <div class="home-hero-content">
+      <p class="home-hero-kicker">استودیو دیجیتال نِماو</p>
+      <h1 class="home-hero-title">کار شما، یک راه‌حل ساده‌تر می‌خواهد.</h1>
+      <p class="home-hero-sub">از کارهای اداری و دیجیتال تا طراحی و اجرای وب‌سایت؛ راهکاری متناسب با نیاز و بودجه‌ات
+        برات می‌چینیم.</p>
+      <div class="home-hero-actions">
+        <a href="{% url 'contact' %}" class="btn btn-lg">دریافت قیمت پروژه</a>
+        <a href="#services" class="btn btn-ghost btn-lg">مشاهدهٔ خدمات</a>
+      </div>
+    </div>
+
+    <div class="home-hero-stage">
+      <div class="home-hero-bubbles-stage" aria-hidden="true"></div>
+      <div class="home-hero-tilt">
+        <div class="home-hero-stack">
+          <div class="home-hero-float">
+            <img src="{% static 'img/hero-logo-3d.png' %}" alt="" class="home-hero-logo">
+          </div>
+          <div class="home-hero-ring" aria-hidden="true">
+            <div class="home-hero-orbit-wrap">
+              <div class="home-hero-orbit"><span class="home-hero-spark"></span></div>
+            </div>
+          </div>
+          <div class="home-hero-shadow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="home-hero-scroll" href="#services" aria-label="اسکرول به خدمات">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </a>
 </section>
+
+<!-- ===== 02. Services ===== -->
+<section id="services" class="home-services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="home-sec-head reveal">
+      <p class="home-sec-kicker">خدمات نِماو</p>
+      <h2 id="services-title" class="home-sec-title home-sec-title-grad">خدمات ما</h2>
+      <p class="home-sec-sub">راهکارهای دیجیتال برای نیازهای واقعی شما</p>
+    </div>
+
+    <div class="home-bento home-stagger">
+
+      <article class="home-bento-card home-bento-a reveal">
+        <a class="home-bento-link" href="{% url 'contact' %}?type=web" aria-label="درخواست طراحی وب‌سایت"></a>
+        <div class="home-bento-head">
+          <span class="home-bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg></span>
+          <h3>طراحی وب‌سایت</h3>
+        </div>
+        <p>وب‌سایت مدرن، سریع و امن که کسب‌وکارت رو حرفه‌ای نشون می‌ده.</p>
+        <div class="home-bento-mock" aria-hidden="true">
+          <div class="home-bento-mock-bar"><span></span><span></span><span></span></div>
+          <div class="home-bento-mock-body">
+            <div class="home-bento-line w-70"></div>
+            <div class="home-bento-line w-50"></div>
+            <div class="home-bento-line w-60"></div>
+            <span class="home-bento-caret"></span>
+          </div>
+        </div>
+        <span class="home-bento-cta">شروع این خدمت <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg></span>
+        <span class="home-bento-glare" aria-hidden="true"></span>
+      </article>
+
+      <article class="home-bento-card home-bento-b reveal">
+        <a class="home-bento-link" href="{% url 'contact' %}?type=other" aria-label="درخواست طراحی دیجیتال"></a>
+        <div class="home-bento-head">
+          <span class="home-bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg></span>
+          <h3>طراحی دیجیتال</h3>
+        </div>
+        <p>رابط کاربری، تجربه کاربری و هویت بصری که برندت رو متمایز می‌کنه.</p>
+        <span class="home-bento-cta">شروع این خدمت <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg></span>
+        <span class="home-bento-glare" aria-hidden="true"></span>
+      </article>
+
+      <article class="home-bento-card home-bento-c reveal">
+        <a class="home-bento-link" href="{% url 'contact' %}?type=admin"
+          aria-label="درخواست خدمات کامپیوتری و اداری"></a>
+        <div class="home-bento-head">
+          <span class="home-bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg></span>
+          <h3>خدمات کامپیوتری و اداری</h3>
+        </div>
+        <p>کارهای اداری و دیجیتال رو بسپار به ما، روی کار خودت تمرکز کن.</p>
+        <span class="home-bento-cta">شروع این خدمت <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg></span>
+        <span class="home-bento-glare" aria-hidden="true"></span>
+      </article>
+
+      <article class="home-bento-card home-bento-d reveal">
+        <a class="home-bento-link" href="{% url 'contact' %}?type=other" aria-label="درخواست پشتیبانی و مشاوره"></a>
+        <div class="home-bento-head">
+          <span class="home-bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg></span>
+          <h3>پشتیبانی و مشاوره</h3>
+        </div>
+        <p>هر وقت خواستی کنارتم؛ از مشاوره تا رفع مشکل.</p>
+        <span class="home-bento-cta">شروع این خدمت <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg></span>
+        <span class="home-bento-glare" aria-hidden="true"></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03. Digital Design ===== -->
+<section class="home-digital">
+  <div class="container home-digital-inner">
+    <div class="home-digital-content reveal">
+      <p class="home-sec-kicker">طراحی</p>
+      <h2 class="home-sec-title home-sec-start">طراحی دیجیتال</h2>
+      <p class="home-sec-sub home-sec-sub-start">ایده‌ات رو به یک تجربهٔ بصری جذاب تبدیل می‌کنیم.</p>
+      <ul class="home-digital-list home-stagger">
+        <li class="reveal">طراحی سایت</li>
+        <li class="reveal">طراحی اپلیکیشن موبایل</li>
+        <li class="reveal">طراحی رابط کاربری</li>
+        <li class="reveal">طراحی صفحات اختصاصی</li>
+        <li class="reveal">طراحی داشبورد</li>
+      </ul>
+    </div>
+    <div class="home-frame home-frame-tilt-right reveal">
+      <img src="{% static 'img/digital-design-3d.png' %}" alt="پنل‌های شناور رابط کاربری سه‌بعدی">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04. Web Design ===== -->
+<section class="home-web">
+  <div class="container">
+    <div class="home-sec-head reveal">
+      <p class="home-sec-kicker">وب</p>
+      <h2 class="home-sec-title home-sec-title-grad">طراحی وب‌سایت</h2>
+      <p class="home-sec-sub">سایت‌هایی که دیده می‌شن، نه فقط وجود دارن.</p>
+    </div>
+    <div class="home-frame reveal">
+      <img src="{% static 'img/web-design-3d.png' %}" alt="پنجره‌های شناور مرورگر با طراحی وب مدرن">
+    </div>
+    <div class="home-web-chips home-stagger">
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="2" />
+          <path d="M9 22v-4h6v4" />
+          <line x1="9" y1="7" x2="10" y2="7" />
+          <line x1="14" y1="7" x2="15" y2="7" />
+          <line x1="9" y1="12" x2="10" y2="12" />
+          <line x1="14" y1="12" x2="15" y2="12" />
+        </svg>شرکتی</span>
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+        </svg>خدماتی</span>
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>فروشگاهی</span>
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+          <line x1="4" y1="22" x2="4" y2="15" />
+        </svg>لندینگ</span>
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>اختصاصی</span>
+      <span class="home-web-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="9" />
+          <rect x="14" y="3" width="7" height="5" />
+          <rect x="14" y="12" width="7" height="9" />
+          <rect x="3" y="16" width="7" height="5" />
+        </svg>داشبورد</span>
+    </div>
+    <div class="home-web-pills reveal">
+      <span class="home-web-pill"><span class="isolate">WordPress</span></span>
+      <span class="home-web-pill"><span class="isolate">WooCommerce</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05. Admin / Computer Services ===== -->
+<section class="home-admin">
+  <div class="container home-admin-inner">
+    <div class="home-admin-content reveal">
+      <p class="home-sec-kicker">اداری</p>
+      <h2 class="home-sec-title home-sec-start">خدمات کامپیوتری و اداری</h2>
+      <p class="home-sec-sub home-sec-sub-start">کارهای روزمره، با راه‌حل‌های مدرن.</p>
+      <ul class="home-admin-list home-stagger">
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg><span class="isolate">Word</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg><span class="isolate">Excel</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg><span class="isolate">PowerPoint</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg><span class="isolate">PDF</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg>رزومه و CV</li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg>فرم‌های اداری</li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg>ورود اطلاعات</li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12 11 15 16 9" />
+          </svg>تایپ و بنر</li>
+      </ul>
+    </div>
+    <div class="home-frame home-frame-tilt-right reveal">
+      <img src="{% static 'img/admin-services-3d.png' %}" alt="اسناد اداری شناور سه‌بعدی">
+    </div>
+  </div>
+</section>
+
 {% endblock %}
